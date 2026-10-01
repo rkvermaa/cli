@@ -1,3 +1,4 @@
+# Formatter that indents and colorizes JSON response bodies.
 import json
 
 from ...plugins import FormatterPlugin

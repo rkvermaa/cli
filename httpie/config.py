@@ -1,3 +1,4 @@
+# Reads/writes the HTTPie config directory and defaults.
 import json
 import os
 from pathlib import Path
