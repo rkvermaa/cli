@@ -1,3 +1,4 @@
+# Formatter that pretty-prints HTTP header blocks.
 from ...plugins import FormatterPlugin
 
 

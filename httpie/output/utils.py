@@ -1,3 +1,4 @@
+# Small output-layer helpers shared across formatters.
 import json
 import re
 from typing import Tuple

@@ -1,3 +1,4 @@
+# Shared token helpers used by HTTPie's Pygments lexers.
 def precise(lexer, precise_token, parent_token):
     # Due to a pygments bug*, custom tokens will look bad
     # on outside styles. Until it is fixed on upstream, we'll

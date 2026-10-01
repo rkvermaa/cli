@@ -1,3 +1,4 @@
+# Error types raised while parsing nested-JSON CLI syntax.
 from typing import Optional
 
 from .tokens import Token, HIGHLIGHTER
