@@ -1,3 +1,4 @@
+# Cookie jar helpers bridging requests' cookies and HTTPie sessions.
 from http import cookiejar
 
 

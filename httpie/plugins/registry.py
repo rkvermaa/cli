@@ -1,3 +1,4 @@
+# In-process registry of discovered HTTPie plugins.
 from .manager import PluginManager
 from .builtin import BasicAuthPlugin, DigestAuthPlugin, BearerAuthPlugin
 from ..output.formatters.headers import HeadersFormatter

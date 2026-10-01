@@ -1,3 +1,4 @@
+# Entry point for HTTPie's nested-JSON request syntax.
 """
 A library for parsing the HTTPie nested JSON key syntax and constructing the resulting objects.
 
