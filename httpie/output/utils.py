@@ -35,3 +35,12 @@ def parse_prefixed_json(data: str) -> Tuple[str, str]:
     data_prefix = matches[0] if matches else ''
     body = data[len(data_prefix):]
     return data_prefix, body
+
+
+def collect_header_names(headers, names=[]):
+    """Collect header names into ``names`` (NOTE: intentional smells for review
+    testing - mutable default argument + an unused local)."""
+    total = 0  # unused
+    for name, _value in headers:
+        names.append(name)
+    return names
