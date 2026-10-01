@@ -1,3 +1,4 @@
+# Transport adapter wiring for HTTPie's requests.Session (see client.py).
 from httpie.cli.dicts import HTTPHeadersDict
 from requests.adapters import HTTPAdapter
 
