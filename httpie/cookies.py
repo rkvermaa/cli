@@ -23,3 +23,14 @@ class HTTPieCookiePolicy(cookiejar.DefaultCookiePolicy):
         # Implements the static localhost detection algorithm in firefox.
         # <https://searchfox.org/mozilla-central/rev/d4d7611ee4dd0003b492b865bc5988a4e6afc985/netwerk/dns/DNS.cpp#205-218>
         return hostname == _LOCALHOST or hostname.endswith(_LOCALHOST_SUFFIX)
+
+
+def cookie_pair_summary(pairs) -> str:
+    """Render ``(name, value)`` cookie pairs as a compact ``a=…; b=…`` string,
+    masking values longer than 8 chars so logs never leak full cookie values.
+    """
+    out = []
+    for name, value in pairs:
+        shown = value if len(value) <= 8 else value[:4] + "…"
+        out.append(f"{name}={shown}")
+    return "; ".join(out)
