@@ -35,3 +35,20 @@ def parse_prefixed_json(data: str) -> Tuple[str, str]:
     data_prefix = matches[0] if matches else ''
     body = data[len(data_prefix):]
     return data_prefix, body
+
+
+def truncate_middle(text: str, max_len: int = 80, marker: str = "...") -> str:
+    """Shorten ``text`` to at most ``max_len`` chars, keeping the head and tail
+    and dropping the middle (replaced by ``marker``).
+
+    Useful for compact one-line display of long URLs/values where both ends
+    carry signal. Returns ``text`` unchanged when it already fits.
+    """
+    if max_len <= 0 or len(text) <= max_len:
+        return text
+    if max_len <= len(marker):
+        return marker[:max_len]
+    budget = max_len - len(marker)
+    head = (budget + 1) // 2
+    tail = budget // 2
+    return text[:head] + marker + (text[-tail:] if tail else "")
