@@ -1,3 +1,4 @@
+# Helpers for rich-based terminal UI (progress, console).
 import os
 
 from typing import Iterator
