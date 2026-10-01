@@ -48,3 +48,16 @@ def smart_encode(content: str, encoding: str) -> bytes:
 
     """
     return content.encode(encoding, 'replace')
+
+
+def is_probably_text(sample: bytes, threshold: float = 0.30) -> bool:
+    """Heuristic: True when ``sample`` looks like text rather than binary.
+
+    Counts non-printable, non-whitespace bytes; if their fraction is below
+    ``threshold`` the sample is treated as text. Empty input is text.
+    """
+    if not sample:
+        return True
+    printable = set(range(0x20, 0x7F)) | {0x09, 0x0A, 0x0D}
+    nonprint = sum(1 for b in sample if b not in printable)
+    return (nonprint / len(sample)) < threshold
