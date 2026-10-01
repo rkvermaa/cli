@@ -1,3 +1,4 @@
+# Pygments lexer for JSON response bodies.
 import re
 
 from pygments.lexer import bygroups, using, RegexLexer
