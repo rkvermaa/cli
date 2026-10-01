@@ -1,3 +1,4 @@
+# Manager task that checks PyPI for a newer HTTPie release.
 import argparse
 from httpie.context import Environment
 from httpie.status import ExitStatus
